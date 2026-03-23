@@ -1,0 +1,11 @@
+# Bento
+.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+dist/
+build/
