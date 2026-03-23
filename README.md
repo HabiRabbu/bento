@@ -25,7 +25,17 @@ Blocks are separate so you can pick only the ones you need, and so block develop
 
 ## Installation
 
-### pip (any distro with KDE Plasma)
+### Arch Linux (AUR)
+
+```bash
+paru -S bento-git
+```
+
+Or with any other AUR helper (`yay -S bento-git`, etc). This builds from the latest commit and includes the C++ hotkey helper.
+
+### From source (any distro with KDE Plasma)
+
+Requires Python 3.11+ and KDE Plasma (for the global hotkey).
 
 ```bash
 git clone https://github.com/HabiRabbu/bento.git
@@ -33,15 +43,22 @@ cd bento
 pip install .
 ```
 
-Requires Python 3.11+.
+On Arch, Fedora 38+, Ubuntu 23.04+, and other distros enforcing [PEP 668](https://peps.python.org/pep-0668/), use pipx or a venv:
 
-> **Note:** On Arch, Fedora 38+, Ubuntu 23.04+, and other distros enforcing [PEP 668](https://peps.python.org/pep-0668/), `pip install` outside a virtual environment will fail. Use pipx or a venv instead:
->
-> ```bash
-> pipx install .
-> # or
-> python -m venv .venv && source .venv/bin/activate && pip install .
-> ```
+```bash
+pipx install .
+# or
+python -m venv .venv && source .venv/bin/activate && pip install .
+```
+
+To build the hotkey helper manually:
+
+```bash
+cd helpers
+cmake -B build && cmake --build build
+```
+
+This produces `bento-hotkey-helper`, which registers the global hotkey via KDE's KGlobalAccel. The AUR package handles this automatically.
 
 ### Development
 
