@@ -1,0 +1,10 @@
+{
+  "id": "demo",
+  "name": "Demo",
+  "description": "Welcome and getting started guide",
+  "version": "1.0.0",
+  "author": "built-in",
+  "order": 99,
+  "api_version": 1,
+  "requires_config": []
+}

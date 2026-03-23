@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.5
+Type=Application
+Name=Bento
+GenericName=Tray Utility
+Comment=Popup control centre for KDE Plasma
+Exec=bento
+TryExec=bento
+Icon=bento
+Terminal=false
+Categories=Utility;Qt;
+Keywords=tray;launcher;popup;plasma;blocks;
+StartupNotify=false

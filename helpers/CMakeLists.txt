@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(bento-hotkey-helper LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+find_package(KF6GlobalAccel REQUIRED)
+add_executable(bento-hotkey-helper bento_hotkey_helper.cpp)
+target_link_libraries(bento-hotkey-helper PRIVATE Qt6::Core Qt6::Widgets KF6::GlobalAccel)

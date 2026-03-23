@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.github.habirabbu.bento</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Bento</name>
+  <summary>Popup control centre for KDE Plasma</summary>
+
+  <description>
+    <p>
+      Bento is a customisable popup control centre for KDE Plasma. It lives in
+      your system tray and provides quick access to configurable "blocks" —
+      compact widgets that slide down from the top of the screen.
+    </p>
+    <p>
+      Bento ships a modular block system and a demo block to get you started.
+      Additional blocks (e.g. system monitors, quick-settings panels) can be
+      installed from the bento-blocks community collection or created with the
+      built-in scaffold command.
+    </p>
+    <p>
+      Designed for Wayland-first workflows, Bento integrates with KDE's D-Bus
+      services to give you fast, keyboard-friendly control without opening full
+      System Settings.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">org.github.habirabbu.bento.desktop</launchable>
+
+  <url type="homepage">https://github.com/HabiRabbu/bento</url>
+  <url type="bugtracker">https://github.com/HabiRabbu/bento/issues</url>
+  <url type="vcs-browser">https://github.com/HabiRabbu/bento</url>
+
+  <developer id="org.github.habirabbu">
+    <name>HabiRabbu</name>
+  </developer>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f5e6d3</color>
+    <color type="primary" scheme_preference="dark">#3d2b1f</color>
+  </branding>
+
+  <!-- TODO: Add real screenshot before Flathub submission -->
+  <!--
+  <screenshots>
+    <screenshot type="default">
+      <caption>Bento popup showing control blocks</caption>
+      <image>https://raw.githubusercontent.com/HabiRabbu/bento/main/docs/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  -->
+
+  <releases>
+    <release version="0.1.0" date="2026-01-01">
+      <description>
+        <p>Initial release of Bento.</p>
+        <ul>
+          <li>System-tray popup with configurable blocks</li>
+          <li>Modular block system with demo block and community block collection</li>
+          <li>Wayland and X11 support</li>
+          <li>KDE Plasma integration via D-Bus</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+</component>
