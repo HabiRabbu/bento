@@ -26,8 +26,7 @@ jobs:
         run: pip install --upgrade build
 
       - name: Build wheel
-        working-directory: bento
-        run: python -m build --wheel --outdir ../dist
+        run: python -m build --wheel --outdir dist
 
       - name: Extract changelog entry
         id: changelog
