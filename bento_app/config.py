@@ -109,7 +109,7 @@ class BentoConfig:
                     )
                     _ENV_FILE.chmod(stat.S_IRUSR | stat.S_IWUSR)
                 env = dotenv_values(_ENV_FILE)
-                self._data.update({k.lower(): v for k, v in env.items() if v is not None})
+                self._data.update({k: v for k, v in env.items() if v is not None})
             except OSError as exc:
                 logger.warning("Failed to read %s: %s", _ENV_FILE, exc)
 
