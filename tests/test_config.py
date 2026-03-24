@@ -33,7 +33,7 @@ def test_load_json(tmp_config_dir):
 
 
 def test_load_env(tmp_config_dir):
-    """Uppercase .env keys are loaded as lowercase."""
+    """Uppercase .env keys are loaded preserving their original case."""
     from bento_app.config import BentoConfig
 
     env_file = tmp_config_dir / ".env"
@@ -42,8 +42,8 @@ def test_load_env(tmp_config_dir):
     cfg = BentoConfig()
     cfg.load()
 
-    assert cfg.get("my_api_key") == "secret123"
-    assert cfg.get("another_token") == "tok456"
+    assert cfg.get("MY_API_KEY") == "secret123"
+    assert cfg.get("ANOTHER_TOKEN") == "tok456"
 
 
 def test_save_roundtrip(tmp_config_dir):
@@ -53,7 +53,7 @@ def test_save_roundtrip(tmp_config_dir):
     cfg = cfg_mod.BentoConfig()
     cfg.load()
     cfg.set("window_height", 800)
-    cfg.set("my_api_key", "secret123")
+    cfg.set("MY_API_KEY", "secret123")
     cfg.save()
 
     # Reset singleton to simulate a fresh load
@@ -62,7 +62,7 @@ def test_save_roundtrip(tmp_config_dir):
     cfg2 = cfg_mod.BentoConfig()
     cfg2.load()
     assert cfg2.get("window_height") == 800
-    assert cfg2.get("my_api_key") == "secret123"
+    assert cfg2.get("MY_API_KEY") == "secret123"
 
 
 def test_env_permissions(tmp_config_dir):
